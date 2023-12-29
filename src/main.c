@@ -37,7 +37,6 @@ int main ()
         {
             player(display,event_queue,1,Pic,Audio,Font,highestScore);
            
-
         }else if(menu==2)
         {
             player(display,event_queue,2,Pic,Audio,Font,highestScore);

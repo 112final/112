@@ -79,8 +79,11 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
         DetonateBomb(event_queue, &bullet_x, &bullet_y, &bullet_dir, &transbomb,Pic.bitmapexplosion,stage,bombNUM);
         moveplayer(event_queue,&positionx, &positiony,&bullet_x,&bullet_y,&bullet_dir,&transbomb,bombNUM);
         
+        if(bullet_x > 290 && bullet_x < 940 && bullet_y > 0 && bullet_y < 650 )
+        {
+            detectbarrier(barrier,&bullet_x,&bullet_y,&bullet_dir,&transbomb,Pic.bitmapexplosion,stage,bombNUM);
+        }
 
-        detectbarrier(barrier,&bullet_x,&bullet_y,&bullet_dir,&transbomb,Pic.bitmapexplosion,stage,bombNUM);
         renew_arrow(&positionx,&positiony,&arrowD_x,&arrowU_x,&arrowR_y,&arrowL_y);
         renew_bullet(&bullet_dir,&bullet_x,&bullet_y);
         score = StageChanged( stage );
@@ -96,7 +99,6 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
             endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore);
             break;
         }
-
 
         fresharray(stage,barrier);
         al_rest(0.005);
