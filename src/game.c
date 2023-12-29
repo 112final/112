@@ -92,12 +92,12 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
 
 
         fresharray(stage,barrier);
-        al_rest(0.0001);
+        al_rest(0.01);
         
         // 繪製畫面
         
         al_flip_display();
-        al_rest(0.0001);
+        al_rest(0.01);
     }
 
     displayLoadingScreen(Font.fontBig,Pic,1);
