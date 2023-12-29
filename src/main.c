@@ -21,6 +21,7 @@ int main ()
     al_register_event_source(event_queue, al_get_mouse_event_source());
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     displayLoadingScreen(Font.fontBig,Pic,3);
+    al_play_sample(Audio.background, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
 
     int menu=0;
     while(1)
