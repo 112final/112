@@ -29,6 +29,7 @@ void resourceInitPic(struct ResourcePic* Pic)
     Pic->historybutton = NULL;
     Pic->question = NULL;
     Pic->GameInstructions = NULL;
+    Pic->BombType = NULL;
 }
 
 void resourceLoadPic(struct ResourcePic* Pic)
@@ -61,6 +62,7 @@ void resourceLoadPic(struct ResourcePic* Pic)
     Pic->historybutton = al_load_bitmap("./historybutton.png");
     Pic->question = al_load_bitmap("./question.png");
     Pic->GameInstructions = al_load_bitmap("./game instructions.png");
+    Pic->BombType = al_load_bitmap("./bombtype.png");
 }
 
 void resourceDestoryPic(struct ResourcePic* Pic)
@@ -92,6 +94,7 @@ void resourceDestoryPic(struct ResourcePic* Pic)
     al_destroy_bitmap(Pic->historybutton );
     al_destroy_bitmap(Pic->question);
     al_destroy_bitmap(Pic->GameInstructions);
+    al_destroy_bitmap(Pic->BombType);
 }
 
 void resourceInitAudio(struct ResourceAudio* Audio)

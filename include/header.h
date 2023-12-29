@@ -65,6 +65,7 @@ struct ResourcePic
     ALLEGRO_BITMAP *historybutton ;
     ALLEGRO_BITMAP *question ;
     ALLEGRO_BITMAP *GameInstructions;
+    ALLEGRO_BITMAP *BombType;
 
 
 };
