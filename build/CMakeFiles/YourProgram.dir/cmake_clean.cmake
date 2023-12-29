@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "C:/My Program/C/112-1/gameproject_test_1225_2/YourProgram.exe"
-  "C:/My Program/C/112-1/gameproject_test_1225_2/YourProgram.exe.manifest"
-  "C:/My Program/C/112-1/gameproject_test_1225_2/YourProgram.pdb"
-  "C:/My Program/C/112-1/gameproject_test_1225_2/libYourProgram.dll.a"
+  "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/YourProgram.exe"
+  "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/YourProgram.exe.manifest"
+  "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/YourProgram.pdb"
+  "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/libYourProgram.dll.a"
   "CMakeFiles/YourProgram.dir/src/bomb.c.obj"
   "CMakeFiles/YourProgram.dir/src/bomb.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/detect.c.obj"
