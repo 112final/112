@@ -3,8 +3,7 @@
 int menu_first(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,struct ResourcePic Pic,struct ResourceAudio Audio) 
 {
     al_clear_to_color(al_map_rgb(255, 255, 255));
-    ALLEGRO_BITMAP* bitmap = NULL;
-    bitmap = al_load_bitmap("./question.png");
+ 
     bool buttonPressed = true;
 
     int menu=0;
@@ -63,7 +62,7 @@ int menu_first(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,str
         al_draw_bitmap(Pic.restartbutton,DISPLAY_WIDTH/2 -100, DISPLAY_HEIGHT/2 - 225, 0);
         al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 -100, DISPLAY_HEIGHT/2 - 75, 0);
         al_draw_bitmap(Pic.exit,DISPLAY_WIDTH/2 -100, DISPLAY_HEIGHT/2 + 75, 0);
-        al_draw_bitmap(bitmap,0, 0, 0);
+        al_draw_bitmap(Pic.question,10, 10, 0);
         al_flip_display();    
     }
 
@@ -74,8 +73,7 @@ int menu_first(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,str
 
 int menu_second(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio) 
 {
-    ALLEGRO_BITMAP* bitmap = NULL;
-    bitmap = al_load_bitmap("./question.png");
+
     bool buttonPressed = true;
 
     int menu=0;
@@ -151,9 +149,8 @@ int menu_second(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct 
         al_draw_bitmap(Pic.level3,DISPLAY_WIDTH/2 +87, DISPLAY_HEIGHT/2 - 225 , 0);
         al_draw_bitmap(Pic.historybutton,DISPLAY_WIDTH/2 -100, DISPLAY_HEIGHT/2 - 75, 0);
         al_draw_bitmap(Pic.exit,DISPLAY_WIDTH/2 -100, DISPLAY_HEIGHT/2 + 75 , 0);
-        al_draw_bitmap(bitmap,0, 0, 0);
+        al_draw_bitmap(Pic.question,10, 10, 0);
         al_flip_display();
-        //al_rest(0.01);
     }
 
     return menu;
@@ -258,25 +255,38 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
 
 }
 
-void displayLoadingScreen(ALLEGRO_FONT *font , struct ResourcePic Pic) {
-    al_draw_bitmap(Pic.back,0, 0, 0);
-    al_draw_filled_rectangle(400 , 300 , 700 ,390,al_map_rgb(100, 65, 0));
-    al_draw_text(font, al_map_rgb(240, 240, 240), 410, 310, ALLEGRO_ALIGN_LEFT, "Loading...");//加載頁面
-    al_flip_display();
-    al_rest(1.3);
+void displayLoadingScreen(ALLEGRO_FONT *font, struct ResourcePic Pic, int cycles) {
+    const int maxDots = 4; 
+
+    for (int cycle = 0; cycle < cycles; ++cycle) {
+        for (int dots = 1; dots <= maxDots; ++dots) {
+            al_draw_bitmap(Pic.back, 0, 0, 0);
+            al_draw_filled_rectangle(400, 300, 700, 390, al_map_rgb(100, 65, 0));
+
+            
+            char loadingText[20];
+            sprintf(loadingText, "Loading%s", dots == 1 ? "" : (dots == 2 ? "." : (dots == 3 ? ".." : "...")));
+
+            al_draw_text(font, al_map_rgb(240, 240, 240), 410, 310, ALLEGRO_ALIGN_LEFT, loadingText);
+
+            al_flip_display();
+            al_rest(0.3); 
+        }
+    }
 }
+
+
+
+
 
 void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,struct ResourcePic Pic,struct ResourceAudio Audio) 
 {
-    ALLEGRO_BITMAP* bitmap = NULL;
-    bitmap = al_load_bitmap("./game instructions.png");
-    //al_clear_to_color(al_map_rgb(255, 255, 255));
     bool buttonPressed = true;
     while (buttonPressed) 
     {
         al_draw_bitmap(Pic.back,0, 0, 0);
         al_draw_bitmap(Pic.exit,0, 0, 0);
-        al_draw_bitmap(bitmap,100, 100, 0);
+        al_draw_bitmap(Pic.GameInstructions,100, 100, 0);
         ALLEGRO_EVENT ev;//用以儲存al_get_next_event所取出的事件
         if (al_get_next_event(event_queue_1, &ev)) 
         {
@@ -302,6 +312,5 @@ void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queu
         
         al_flip_display();    
     }
-    al_destroy_bitmap(bitmap);
     
 }

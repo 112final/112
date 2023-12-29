@@ -66,6 +66,8 @@ struct ResourcePic
     ALLEGRO_BITMAP *end1 ;
     ALLEGRO_BITMAP *end2 ;
     ALLEGRO_BITMAP *end3 ;
+    ALLEGRO_BITMAP *question ;
+    ALLEGRO_BITMAP *GameInstructions;
 
 
 };
@@ -80,6 +82,14 @@ struct ResourceAudio
 
 };
 
+struct ResourceFont
+{
+    ALLEGRO_FONT *fontBig;
+    ALLEGRO_FONT *fontSmall;
+
+
+};
+
 //function
 void initial_src();//new4
 void initial_array(struct barrier [144]);
@@ -87,7 +97,7 @@ int menu_first(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct
 int menu_second(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic,struct ResourceAudio);//new3
 void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio);
 int returnfirstmenu(ALLEGRO_EVENT_QUEUE *,ALLEGRO_DISPLAY *,int*,int*,struct ResourcePic,struct ResourceAudio);
-void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio);
+void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio,struct ResourceFont);
 void moveplayer(ALLEGRO_EVENT_QUEUE *,int * ,int *,int *,int *,int*,int*,int[3]);
 void stagefile(int [40][40], struct barrier[144] ,int stageNumber ,int [3],struct ResourcePic* Pic);
 void stageprint(int [40][40],ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *);
@@ -98,7 +108,7 @@ void detectexplosion(struct barrier*,int [40][40],int);
 void fresharray(int [40][40],struct barrier [144]);
 void DetonateBomb(ALLEGRO_EVENT_QUEUE *event_queue_,int *bullet_x,int *bullet_y,int* bullet_dir,int*transbomb,ALLEGRO_BITMAP *bitmapexplosion,int [40][40],int[3]);
 int StageChanged(int [40][40]);
-void displayLoadingScreen(ALLEGRO_FONT *font , struct ResourcePic );
+void displayLoadingScreen(ALLEGRO_FONT *font , struct ResourcePic ,int);
 void ScoreDisplay(ALLEGRO_FONT *font,int);
 void LevelDisplay(ALLEGRO_FONT *font,int);
 void BombTypeDisplay(ALLEGRO_FONT *font,int [3],struct ResourcePic);
@@ -118,5 +128,9 @@ void resourceDestoryPic(struct ResourcePic* );
 void resourceInitAudio(struct ResourceAudio* );
 void resourceLoadAudio(struct ResourceAudio* );
 void resourceDestoryAudio(struct ResourceAudio* );
+void resourceInitFont(struct ResourceFont* );
+void resourceLoadFont(struct ResourceFont* );
+void resourceDestoryFont(struct ResourceFont* );
+
 
 #endif

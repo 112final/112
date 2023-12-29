@@ -30,6 +30,8 @@ void resourceInitPic(struct ResourcePic* Pic)
     Pic->end1 = NULL;
     Pic->end2 = NULL;
     Pic->end3 = NULL;
+    Pic->question = NULL;
+    Pic->GameInstructions = NULL;
 }
 
 void resourceLoadPic(struct ResourcePic* Pic)
@@ -63,6 +65,8 @@ void resourceLoadPic(struct ResourcePic* Pic)
     Pic->end1 = al_load_bitmap("./end1.png");
     Pic->end2 = al_load_bitmap("./end2.png");
     Pic->end3 = al_load_bitmap("./end3.png");
+    Pic->question = al_load_bitmap("./question.png");
+    Pic->GameInstructions = al_load_bitmap("./game instructions.png");
 }
 
 void resourceDestoryPic(struct ResourcePic* Pic)
@@ -95,6 +99,8 @@ void resourceDestoryPic(struct ResourcePic* Pic)
     al_destroy_bitmap(Pic->end1);
     al_destroy_bitmap(Pic->end2);
     al_destroy_bitmap(Pic->end3);
+    al_destroy_bitmap(Pic->question);
+    al_destroy_bitmap(Pic->GameInstructions);
 }
 
 void resourceInitAudio(struct ResourceAudio* Audio)
@@ -114,7 +120,7 @@ void resourceLoadAudio(struct ResourceAudio* Audio)
     Audio->button = al_load_sample("./bonk.mp3"); 
     Audio->boom = al_load_sample("./boom.mp3");
     Audio->flying = al_load_sample("./flying.mp3"); 
-    //Audio->background = al_load_sample("./background.mp3");
+    Audio->background = al_load_sample("./background.mp3");
 }
 
 void resourceDestoryAudio(struct ResourceAudio* Audio)
@@ -125,5 +131,28 @@ void resourceDestoryAudio(struct ResourceAudio* Audio)
     al_destroy_sample(Audio->boom);
     al_destroy_sample(Audio->flying);
     al_destroy_sample(Audio->background);
+
+}
+
+void resourceInitFont(struct ResourceFont* Font)
+{
+    Font->fontBig = NULL;
+    Font->fontSmall = NULL;
+    
+}
+
+void resourceLoadFont(struct ResourceFont* Font)
+{
+
+    Font->fontBig =  al_load_ttf_font("arial.ttf", 60, 0);
+    Font->fontSmall = al_load_ttf_font("arial.ttf", 32, 0);; 
+}
+
+void resourceDestoryFont(struct ResourceFont* Font)
+{
+    
+    al_destroy_font(Font->fontBig);
+    al_destroy_font(Font->fontSmall);
+ 
 
 }
