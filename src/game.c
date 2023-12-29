@@ -1,6 +1,6 @@
 #include "header.h"
 
-void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageNumber,struct ResourcePic Pic,struct ResourceAudio Audio,struct ResourceFont Font)
+void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageNumber,struct ResourcePic Pic,struct ResourceAudio Audio,struct ResourceFont Font,int* highestScore)
 {   
 
     int stage [40][40];
@@ -88,6 +88,12 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
         {
             CurrentScore = MaxScore - score;    
             previousScore = score;
+        }
+
+        if(bombNUM[0] == 0 && bombNUM[1] == 0 && bombNUM[2] == 0)
+        {
+            endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore);
+            break;
         }
 
 

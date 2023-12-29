@@ -5,8 +5,6 @@ void cross(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *bull
 
     struct barrier coop[5];
     int bullet_x1[5],bullet_y1[5],i;
-    //printf("bomb\n");
-    //printf("bullet_dir=%d\n",*bullet_dir);
     if (*bullet_dir == 0)
         {
             bullet_x1[0]=*bullet_x+25;
@@ -26,7 +24,6 @@ void cross(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *bull
             // 向右移動
             for(i=0;i<5;i++)
             {
-                //printf("%d\n",bullet_y1[i]);
                 coop[i].initial_x=(bullet_x1[i]-340)/50;
                 coop[i].initial_y=(bullet_y1[i])/50;
                 
@@ -114,7 +111,6 @@ void cross(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *bull
             al_draw_bitmap(bitmapexplosion, *bullet_x, *bullet_y-50, 0);
         }
         al_flip_display();
-        //printf("cross");
         al_rest(0.2);
                      
 }
@@ -123,9 +119,7 @@ void bigcross(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *b
 {
     struct barrier coop[9];
     int bullet_x1[9],bullet_y1[9],i;
-    printf("bomb\n");
 
-    printf("bullet_dir=%d\n",*bullet_dir);
     if (*bullet_dir == 0)
         {
             bullet_x1[0]=*bullet_x+25;
@@ -157,7 +151,6 @@ void bigcross(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *b
             // 向右移動
             for(i=0;i<9;i++)
             {
-                //printf("%d\n",bullet_y1[i]);
                 coop[i].initial_x=(bullet_x1[i]-340)/50;
                 coop[i].initial_y=(bullet_y1[i])/50;
                 
@@ -310,9 +303,7 @@ void square(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *bul
 {
     struct barrier coop[9];
     int bullet_x1[9],bullet_y1[9],i;
-    printf("bomb\n");
 
-    printf("bullet_dir=%d\n",*bullet_dir);
     if (*bullet_dir == 0)
         {
             bullet_x1[0]=*bullet_x+25;
@@ -344,7 +335,6 @@ void square(int *bullet_x,int *bullet_y,ALLEGRO_BITMAP *bitmapexplosion,int *bul
             // 向右移動
             for(i=0;i<9;i++)
             {
-                //printf("%d\n",bullet_y1[i]);
                 coop[i].initial_x=(bullet_x1[i]-320)/50;
                 coop[i].initial_y=(bullet_y1[i])/50;
                 

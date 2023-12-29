@@ -9,12 +9,16 @@ int main ()
     struct ResourcePic Pic;
     struct ResourceAudio Audio;
     struct ResourceFont Font;
+    int highestScore[3];
     resourceInitPic(&Pic);
     resourceInitAudio(&Audio);
     resourceInitFont(&Font);
     resourceLoadPic(&Pic);
     resourceLoadAudio(&Audio);
     resourceLoadFont(&Font);
+
+    ScoreFileLoad (highestScore);
+
     display = al_create_display(DISPLAY_WIDTH,DISPLAY_HEIGHT);
     event_queue = al_create_event_queue();
     al_register_event_source(event_queue, al_get_display_event_source(display));
@@ -27,34 +31,29 @@ int main ()
     while(1)
     {
      
-       //endgame(display,event_queue);
-        printf("hi");
         menu=0;
         menu=menu_second(display,event_queue,Pic,Audio);
         if(menu==1)
         {
-            player(display,event_queue,1,Pic,Audio,Font);
-            printf("back");
+            player(display,event_queue,1,Pic,Audio,Font,highestScore);
            
 
         }else if(menu==2)
         {
-            player(display,event_queue,2,Pic,Audio,Font);
-            printf("back");
+            player(display,event_queue,2,Pic,Audio,Font,highestScore);
             
         }else if (menu==3)
         {
-            player(display,event_queue,3,Pic,Audio,Font);
-            printf("back");
+            player(display,event_queue,3,Pic,Audio,Font,highestScore);
             
             
         }else if (menu==4)
-        {
-            printf("history\n");
+        {   
+            ScoreFileLoad (highestScore);
+            historygame(display,event_queue,Pic,Audio,highestScore,Font);
             
         }else if(menu==5)
         {
-            //printf("exit\n");
             break;
         }
     }

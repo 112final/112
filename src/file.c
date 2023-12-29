@@ -32,7 +32,7 @@ void stagefile(int stage[40][40],struct barrier barrier[144],int stageNumber,int
     fscanf(file2, "%d %d %d", &bomb[0], &bomb[1], &bomb[2]);
 
     fclose(file2);
-    printf("Load Successful\n");
+
     
     for (j = 0; j < 12; j++)
         for (i = 0; i < 12; i++) 
@@ -79,10 +79,30 @@ void stageprint(int stage[40][40],ALLEGRO_BITMAP *bitmapstone,ALLEGRO_BITMAP *re
 
 }
 
-//void stagefile (int highestScore[3])
-//{
-//    FILE *file = fopen("./history.txt", "r");
+void ScoreFileLoad (int* highestScore)
+{
+    int i;
+    FILE *file = fopen("./history.txt", "r");
+        for (i = 0; i < 3; i++) 
+        {
+            fscanf(file, "%d ", &highestScore[i]);
+        }
+
+        fclose(file);
+
+}
+
+void ScoreFileSave (int* highestScore)
+{   
+    int i;
+    FILE *file = fopen("./history.txt", "w");
+        for (i = 0; i < 3; i++) 
+        {
+            fprintf(file, "%d ", highestScore[i]);
+        }
+
+        fclose(file);
 
 
-//}
+}
 

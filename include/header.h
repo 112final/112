@@ -63,9 +63,6 @@ struct ResourcePic
     ALLEGRO_BITMAP *level2 ;
     ALLEGRO_BITMAP *level3 ;
     ALLEGRO_BITMAP *historybutton ;
-    ALLEGRO_BITMAP *end1 ;
-    ALLEGRO_BITMAP *end2 ;
-    ALLEGRO_BITMAP *end3 ;
     ALLEGRO_BITMAP *question ;
     ALLEGRO_BITMAP *GameInstructions;
 
@@ -95,9 +92,9 @@ void initial_src();//new4
 void initial_array(struct barrier [144]);
 int menu_first(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio);//new2
 int menu_second(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic,struct ResourceAudio);//new3
-void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio);
+void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio,int,int,int,int*);
 int returnfirstmenu(ALLEGRO_EVENT_QUEUE *,ALLEGRO_DISPLAY *,int*,int*,struct ResourcePic,struct ResourceAudio);
-void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio,struct ResourceFont);
+void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio,struct ResourceFont,int*);
 void moveplayer(ALLEGRO_EVENT_QUEUE *,int * ,int *,int *,int *,int*,int*,int[3]);
 void stagefile(int [40][40], struct barrier[144] ,int stageNumber ,int [3],struct ResourcePic* Pic);
 void stageprint(int [40][40],ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *);
@@ -113,6 +110,10 @@ void ScoreDisplay(ALLEGRO_FONT *font,int);
 void LevelDisplay(ALLEGRO_FONT *font,int);
 void BombTypeDisplay(ALLEGRO_FONT *font,int [3],struct ResourcePic);
 void game_instruction(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio ) ;
+void historygame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio,int*,struct ResourceFont);
+
+void ScoreFileLoad (int* );
+void ScoreFileSave (int* );
 
 
 

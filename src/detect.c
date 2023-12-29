@@ -131,9 +131,6 @@ void DetonateBomb(ALLEGRO_EVENT_QUEUE *event_queue, int *bullet_x, int *bullet_y
         {
             int bullet_x1 = *bullet_x;
             int bullet_y1 = *bullet_y;
-            //printf("Detonate\n");
-            //printf("bullet_dir: %d\n", *bullet_dir);
-
                 if (*transbomb == 0)
                 {
                     cross(&bullet_x1, &bullet_y1, bitmapexplosion,bullet_dir,stage);
@@ -168,7 +165,6 @@ void detectexplosion(struct barrier*coop,int stage[40][40],int i )
     int a;
         for (a=0;a<i;a++)       
         {
-            //printf("detectexplosion\n");
             if(stage[coop[a].initial_y][coop[a].initial_x]!=4)
             {
                 stage[coop[a].initial_y][coop[a].initial_x]=0;
