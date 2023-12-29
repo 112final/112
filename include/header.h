@@ -102,6 +102,7 @@ void displayLoadingScreen(ALLEGRO_FONT *font , struct ResourcePic );
 void ScoreDisplay(ALLEGRO_FONT *font,int);
 void LevelDisplay(ALLEGRO_FONT *font,int);
 void BombTypeDisplay(ALLEGRO_FONT *font,int [3],struct ResourcePic);
+void game_instruction(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio ) ;
 
 
 
