@@ -6,7 +6,7 @@ void stagefile(int stage[40][40],struct barrier barrier[144],int stageNumber,int
 
     char mapName[20];
     char fileName[20];  // 文件檔名加載
-    sprintf(fileName, "stage%d.txt", stageNumber);
+    sprintf(fileName, "./stage%d.txt", stageNumber);
     sprintf(mapName, "./map%d.png", (stageNumber%3)+1);
 
 
@@ -78,4 +78,11 @@ void stageprint(int stage[40][40],ALLEGRO_BITMAP *bitmapstone,ALLEGRO_BITMAP *re
         }
 
 }
+
+//void stagefile (int highestScore[3])
+//{
+//    FILE *file = fopen("./history.txt", "r");
+
+
+//}
 

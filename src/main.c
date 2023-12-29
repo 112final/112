@@ -61,5 +61,7 @@ int main ()
   al_destroy_display(display);
   al_destroy_event_queue(event_queue);
   resourceDestoryPic(&Pic);
+  resourceDestoryAudio(&Audio);
+  resourceDestoryFont(&Font);
   return 0;
 }
