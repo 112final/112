@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/YourProgram.exe"
+			"path" : "C:/My Program/C/112-1/gameproject_test_1225_2/YourProgram.exe"
 		},
 		{
-			"path" : "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/YourProgram.pdb"
+			"path" : "C:/My Program/C/112-1/gameproject_test_1225_2/YourProgram.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/Chenyujay/Downloads/112_1_final-main(1)/include"
+					"path" : "C:/My Program/C/112-1/gameproject_test_1225_2/include"
 				}
 			],
 			"language" : "C",
