@@ -45,11 +45,8 @@ int menu_first(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,str
                 }
                 if (mouseX >= 0 && mouseX <= 75 && mouseY >= 0 && mouseY <= 75) 
                 {
-                    //al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
-                    //buttonPressed = false;
-                    //menu=3;
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
                     game_instruction(display_1,event_queue_1,Pic,Audio);
-                    //break;
                     
                 }
             } 
@@ -103,26 +100,26 @@ int menu_second(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct 
                 }
                 if (mouseX >= DISPLAY_WIDTH/2 +87 && mouseX <= DISPLAY_WIDTH/2 +162 && mouseY >= DISPLAY_HEIGHT/2 - 225 && mouseY <= DISPLAY_HEIGHT/2 - 150) 
                 {   
-
+                    al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
                     buttonPressed = false;
                     menu = 3;
-                    al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+                    
                 }
                 if (mouseX >= DISPLAY_WIDTH/2 - 100 && mouseX <= DISPLAY_WIDTH/2 +100 && mouseY >= DISPLAY_HEIGHT/2 - 75 && mouseY <= DISPLAY_HEIGHT/2) 
-                {
+                {   
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
                     buttonPressed = false;
                     menu= 4;
                 }
                 if (mouseX >= DISPLAY_WIDTH/2 - 100 && mouseX <= DISPLAY_WIDTH/2 +100 && mouseY >= DISPLAY_HEIGHT/2 + 75 && mouseY <= DISPLAY_HEIGHT/2 + 150) 
                 {
-                    
                     menu = 5;
 
                     buttonPressed = false;
                 }
                 if (mouseX >= 0 && mouseX <= 75 && mouseY >= 0 && mouseY <= 75) 
                 {
-
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
                     game_instruction(display,event_queue,Pic,Audio);
 
                     
