@@ -301,3 +301,64 @@ void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queu
     }
     
 }
+
+void historygame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int* highestScore,struct ResourceFont Font) 
+{
+    bool buttonPressed = true;
+    char ScoreText[3][10];
+    int i;
+    
+
+    while (buttonPressed) {
+
+        ALLEGRO_EVENT ev;//用以儲存al_get_next_event所取出的事件
+        if (al_get_next_event(event_queue, &ev)) 
+        {
+            if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) 
+            {
+                break;
+
+            } else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+                int mouseX = ev.mouse.x;
+                int mouseY = ev.mouse.y;
+
+                if (mouseX >= 0 && mouseX <= 200 && mouseY >= 0 && mouseY <= 65) 
+                {
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+
+                    break;
+                    
+                }
+
+                if (mouseX >= 1000 && mouseX <= 1200 && mouseY >= 545 && mouseY <= 605) 
+                {
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+                    ScoreFileClear();
+                    break;   
+                }
+                
+
+            } 
+        }
+
+        al_draw_bitmap(Pic.back,0, 0, 0);
+        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -250 , DISPLAY_HEIGHT/2 - 300 , DISPLAY_WIDTH/2 +250 ,DISPLAY_HEIGHT/2 + 300,al_map_rgb(180, 135, 65));
+        al_draw_bitmap(Pic.level1,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 - 225 , 0);
+        al_draw_bitmap(Pic.level2,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 - 25 , 0);
+        al_draw_bitmap(Pic.level3,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 + 175, 0);
+        al_draw_bitmap(Pic.contiune,30, 20, 0);
+
+        al_draw_filled_rectangle( 1000 , 545 , 1200 , 605 ,al_map_rgb(100, 65, 0));
+        al_draw_text(Font.fontSmall, al_map_rgb(240, 240, 240), 1100 , 555, ALLEGRO_ALIGN_CENTER,"Clear History");
+
+        for( i=0 ; i<3 ; i++)
+        {
+            snprintf(ScoreText[i], sizeof(ScoreText), "%d", highestScore[i]);
+            al_draw_text(Font.fontBig, al_map_rgb(240, 240, 240), DISPLAY_WIDTH/2 -90 , DISPLAY_HEIGHT/2 - 223 +200*i, ALLEGRO_ALIGN_LEFT,ScoreText[i]);
+        }
+
+        al_flip_display(); 
+
+    }
+    
+}

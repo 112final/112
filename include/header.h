@@ -115,6 +115,7 @@ void historygame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,stru
 
 void ScoreFileLoad (int* );
 void ScoreFileSave (int* );
+void ScoreFileClear ();
 
 
 

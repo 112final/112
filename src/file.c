@@ -106,3 +106,16 @@ void ScoreFileSave (int* highestScore)
 
 }
 
+void ScoreFileClear ()
+{   
+    int i;
+    FILE *file = fopen("./history.txt", "w");
+        for (i = 0; i < 3; i++) 
+        {
+            fprintf(file, "%d ", 0);
+        }
+
+        fclose(file);
+
+
+}
