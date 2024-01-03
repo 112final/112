@@ -1,4 +1,5 @@
 #include "header.h"
+
 void initial_src()
 {
     al_init();
@@ -13,6 +14,7 @@ void initial_src()
     al_init_font_addon(); 
     al_init_ttf_addon();
 }
+
 void initial_array(struct barrier barrier[144])
 {
     int i;

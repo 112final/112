@@ -64,7 +64,6 @@ int menu_first(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,str
 
 }
 
-
 int menu_second(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio) 
 {
 
@@ -171,8 +170,6 @@ int returnfirstmenu(ALLEGRO_EVENT_QUEUE *event_queue,ALLEGRO_DISPLAY *display,in
     return menu;      
 }
 
-
-
 void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int MaxScore,int stageNumber,int* highestScore) 
 {
 
@@ -240,9 +237,6 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
 
 }
 
-
-
-
 void displayLoadingScreen(ALLEGRO_FONT *font, struct ResourcePic Pic, int cycles) {
     const int maxDots = 4; 
 
@@ -262,10 +256,6 @@ void displayLoadingScreen(ALLEGRO_FONT *font, struct ResourcePic Pic, int cycles
         }
     }
 }
-
-
-
-
 
 void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queue_1,struct ResourcePic Pic,struct ResourceAudio Audio) 
 {

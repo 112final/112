@@ -160,6 +160,7 @@ void DetonateBomb(ALLEGRO_EVENT_QUEUE *event_queue, int *bullet_x, int *bullet_y
         }
     }
 }
+
 void detectexplosion(struct barrier*coop,int stage[40][40],int i )
 {
     int a;

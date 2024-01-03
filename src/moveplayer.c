@@ -153,5 +153,3 @@ void moveplayer(ALLEGRO_EVENT_QUEUE *event_queue,int * positionx,int * positiony
             }
         }
 }
-
-
