@@ -324,7 +324,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
                 }
 
                 if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
-                    if (mouseX >= 1064 && mouseX <= 1134 && mouseY >= 345 && mouseY <= 420) {
+                    if (mouseX >= 1064 && mouseX <= 1134 && mouseY >= 375 && mouseY <= 450) {
                         // Handle button press for level 4 if conditions are met
                         al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                         player(display, event_queue, 4, Pic, Audio, Font, highestScore);
@@ -344,7 +344,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
         al_draw_bitmap(Pic.contiune, 30, 20, 0);
 
         if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
-            al_draw_bitmap(Pic.level4, 1064, 345, 0);
+            al_draw_bitmap(Pic.level4, 1064, 375, 0);
         }
 
         al_draw_filled_rectangle(1000, 545, 1200, 605, al_map_rgb(100, 65, 0));
