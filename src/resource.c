@@ -26,6 +26,7 @@ void resourceInitPic(struct ResourcePic* Pic)
     Pic->level1 = NULL;
     Pic->level2 = NULL;
     Pic->level3 = NULL;
+    Pic->level4 = NULL;
     Pic->historybutton = NULL;
     Pic->question = NULL;
     Pic->GameInstructions = NULL;
@@ -58,7 +59,8 @@ void resourceLoadPic(struct ResourcePic* Pic)
     Pic->restartbutton = al_load_bitmap("./restartbutton.png");
     Pic->level1 = al_load_bitmap("./level1.png");
     Pic->level2 = al_load_bitmap("./level2.png");
-    Pic->level3 = al_load_bitmap("./level3.png");   
+    Pic->level3 = al_load_bitmap("./level3.png"); 
+    Pic->level4 = al_load_bitmap("./level4.png");   
     Pic->historybutton = al_load_bitmap("./historybutton.png");
     Pic->question = al_load_bitmap("./question.png");
     Pic->GameInstructions = al_load_bitmap("./game instructions.png");
@@ -91,6 +93,7 @@ void resourceDestoryPic(struct ResourcePic* Pic)
     al_destroy_bitmap(Pic->level1);
     al_destroy_bitmap(Pic->level2);
     al_destroy_bitmap(Pic->level3);
+    al_destroy_bitmap(Pic->level4);
     al_destroy_bitmap(Pic->historybutton );
     al_destroy_bitmap(Pic->question);
     al_destroy_bitmap(Pic->GameInstructions);

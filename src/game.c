@@ -70,7 +70,7 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
         al_draw_bitmap(Pic.bitmap_left,arrowL_x,arrowL_y,0);
         al_draw_bitmap(Pic.bitmap_up,arrowU_x,arrowU_y,0);
         al_draw_bitmap(Pic.bitmap_down,arrowD_x,arrowD_y,0);
-        ScoreDisplay(Font.fontSmall,CurrentScore);
+        ScoreDisplay(Font.fontSmall,CurrentScore,1045,60);
 
         menu = returnfirstmenu(event_queue,display,&positionx,&positiony,Pic,Audio);
         if(menu==1)
@@ -97,7 +97,7 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
 
         if(bombNUM[0] == 0 && bombNUM[1] == 0 && bombNUM[2] == 0)
         {
-            endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore);
+            endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore,Font);
             break;
         }
 

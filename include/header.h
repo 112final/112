@@ -62,6 +62,7 @@ struct ResourcePic
     ALLEGRO_BITMAP *level1 ;
     ALLEGRO_BITMAP *level2 ;
     ALLEGRO_BITMAP *level3 ;
+    ALLEGRO_BITMAP *level4 ;
     ALLEGRO_BITMAP *historybutton ;
     ALLEGRO_BITMAP *question ;
     ALLEGRO_BITMAP *GameInstructions;
@@ -93,7 +94,7 @@ void initial_src();//new4
 void initial_array(struct barrier [144]);
 int menu_first(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio);//new2
 int menu_second(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic,struct ResourceAudio);//new3
-void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio,int,int,int,int*);
+void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio,int,int,int,int*,struct ResourceFont );
 int returnfirstmenu(ALLEGRO_EVENT_QUEUE *,ALLEGRO_DISPLAY *,int*,int*,struct ResourcePic,struct ResourceAudio);
 void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio,struct ResourceFont,int*);
 void moveplayer(ALLEGRO_EVENT_QUEUE *,int * ,int *,int *,int *,int*,int*,int[3]);
@@ -107,7 +108,7 @@ void fresharray(int [40][40],struct barrier [144]);
 void DetonateBomb(ALLEGRO_EVENT_QUEUE *event_queue_,int *bullet_x,int *bullet_y,int* bullet_dir,int*transbomb,ALLEGRO_BITMAP *bitmapexplosion,int [40][40],int[3]);
 int StageChanged(int [40][40]);
 void displayLoadingScreen(ALLEGRO_FONT *font , struct ResourcePic ,int);
-void ScoreDisplay(ALLEGRO_FONT *font,int);
+void ScoreDisplay(ALLEGRO_FONT *font,int,int,int);
 void LevelDisplay(ALLEGRO_FONT *font,int);
 void BombTypeDisplay(ALLEGRO_FONT *font,int [3],struct ResourcePic);
 void game_instruction(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio ) ;

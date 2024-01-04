@@ -170,7 +170,7 @@ int returnfirstmenu(ALLEGRO_EVENT_QUEUE *event_queue,ALLEGRO_DISPLAY *display,in
     return menu;      
 }
 
-void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int MaxScore,int stageNumber,int* highestScore) 
+void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int MaxScore,int stageNumber,int* highestScore,struct ResourceFont Font) 
 {
 
     bool buttonPressed = true;
@@ -225,9 +225,11 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
         }
 
         al_draw_bitmap(Pic.back,0, 0, 0);
-       
+        
         al_draw_bitmap(end_plane,DISPLAY_WIDTH/2 -250, DISPLAY_HEIGHT/2 - 300, 0); 
         al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 - 75, 0); 
+        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -100, 400, DISPLAY_WIDTH/2 +100, 450, al_map_rgb(100, 65, 0));
+        ScoreDisplay(Font.fontSmall,CurrentScore,DISPLAY_WIDTH/2 -70,410);
         al_flip_display();    
     }
         ScoreFileSave (highestScore);
@@ -292,63 +294,69 @@ void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queu
     
 }
 
-void historygame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int* highestScore,struct ResourceFont Font) 
-{
+void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, struct ResourcePic Pic, struct ResourceAudio Audio, int *highestScore, struct ResourceFont Font) {
     bool buttonPressed = true;
     char ScoreText[3][10];
     int i;
-    
 
     while (buttonPressed) {
+        ALLEGRO_EVENT ev;
 
-        ALLEGRO_EVENT ev;//用以儲存al_get_next_event所取出的事件
-        if (al_get_next_event(event_queue, &ev)) 
-        {
-            if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) 
-            {
-                break;
-
+        // Wait for the next event
+        if (al_get_next_event(event_queue, &ev)) {
+            if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+                break;  // Break out of the loop if the display is closed
             } else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
                 int mouseX = ev.mouse.x;
                 int mouseY = ev.mouse.y;
 
-                if (mouseX >= 0 && mouseX <= 200 && mouseY >= 0 && mouseY <= 65) 
-                {
-                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
-
+                if (mouseX >= 0 && mouseX <= 200 && mouseY >= 0 && mouseY <= 65) {
+                    // Handle button press in the top left corner
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                     break;
-                    
                 }
 
-                if (mouseX >= 1000 && mouseX <= 1200 && mouseY >= 545 && mouseY <= 605) 
-                {
-                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+                if (mouseX >= 1000 && mouseX <= 1200 && mouseY >= 545 && mouseY <= 605) {
+                    // Handle button press for clearing history
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                     ScoreFileClear();
-                    break;   
+                    break;
                 }
-                
 
-            } 
+                if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
+                    if (mouseX >= 1064 && mouseX <= 1134 && mouseY >= 345 && mouseY <= 420) {
+                        // Handle button press for level 4 if conditions are met
+                        al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                        player(display, event_queue, 4, Pic, Audio, Font, highestScore);
+                        break;
+                    }
+                }
+            }
         }
 
-        al_draw_bitmap(Pic.back,0, 0, 0);
-        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -250 , DISPLAY_HEIGHT/2 - 300 , DISPLAY_WIDTH/2 +250 ,DISPLAY_HEIGHT/2 + 300,al_map_rgb(180, 135, 65));
-        al_draw_bitmap(Pic.level1,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 - 225 , 0);
-        al_draw_bitmap(Pic.level2,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 - 25 , 0);
-        al_draw_bitmap(Pic.level3,DISPLAY_WIDTH/2 -240, DISPLAY_HEIGHT/2 + 175, 0);
-        al_draw_bitmap(Pic.contiune,30, 20, 0);
+        // Drawing graphics
+        al_draw_bitmap(Pic.back, 0, 0, 0);
+        al_draw_filled_rectangle(DISPLAY_WIDTH / 2 - 250, DISPLAY_HEIGHT / 2 - 300, DISPLAY_WIDTH / 2 + 250, DISPLAY_HEIGHT / 2 + 300, al_map_rgb(180, 135, 65));
+        al_draw_bitmap(Pic.level1, DISPLAY_WIDTH / 2 - 240, DISPLAY_HEIGHT / 2 - 225, 0);
+        al_draw_bitmap(Pic.level2, DISPLAY_WIDTH / 2 - 240, DISPLAY_HEIGHT / 2 - 25, 0);
+        al_draw_bitmap(Pic.level3, DISPLAY_WIDTH / 2 - 240, DISPLAY_HEIGHT / 2 + 175, 0);
 
-        al_draw_filled_rectangle( 1000 , 545 , 1200 , 605 ,al_map_rgb(100, 65, 0));
-        al_draw_text(Font.fontSmall, al_map_rgb(240, 240, 240), 1100 , 555, ALLEGRO_ALIGN_CENTER,"Clear History");
+        al_draw_bitmap(Pic.contiune, 30, 20, 0);
 
-        for( i=0 ; i<3 ; i++)
-        {
-            snprintf(ScoreText[i], sizeof(ScoreText), "%d", highestScore[i]);
-            al_draw_text(Font.fontBig, al_map_rgb(240, 240, 240), DISPLAY_WIDTH/2 -90 , DISPLAY_HEIGHT/2 - 223 +200*i, ALLEGRO_ALIGN_LEFT,ScoreText[i]);
+        if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
+            al_draw_bitmap(Pic.level4, 1064, 345, 0);
         }
 
-        al_flip_display(); 
+        al_draw_filled_rectangle(1000, 545, 1200, 605, al_map_rgb(100, 65, 0));
+        al_draw_text(Font.fontSmall, al_map_rgb(240, 240, 240), 1100, 555, ALLEGRO_ALIGN_CENTER, "Clear History");
+
+        for (i = 0; i < 3; i++) {
+            snprintf(ScoreText[i], sizeof(ScoreText[i]), "%d", highestScore[i]);
+            al_draw_text(Font.fontBig, al_map_rgb(240, 240, 240), DISPLAY_WIDTH / 2 - 90, DISPLAY_HEIGHT / 2 - 223 + 200 * i, ALLEGRO_ALIGN_LEFT, ScoreText[i]);
+        }
+
+        al_flip_display();  // Flip the display to show the updated graphics
+        al_rest(0.02); // Adjust the delay as needed to control the frame rate
 
     }
-    
 }
