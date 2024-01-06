@@ -33,12 +33,12 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
     int menu =0;
 
     displayLoadingScreen(Font.fontBig,Pic,1);
-    al_draw_bitmap(Pic.back, 0, 0, 0);
+    
     
     while ( menu != 3 )
     {
         
-        
+        al_draw_bitmap(Pic.back, 0, 0, 0);
         al_draw_bitmap(Pic.map, 290, 0, 0);
         al_draw_bitmap(Pic.BombType, 45, 50, 0);
 

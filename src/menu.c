@@ -229,7 +229,7 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
         al_draw_bitmap(end_plane,DISPLAY_WIDTH/2 -250, DISPLAY_HEIGHT/2 - 300, 0); 
         al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 - 75, 0); 
         al_draw_filled_rectangle(DISPLAY_WIDTH/2 -100, 400, DISPLAY_WIDTH/2 +100, 450, al_map_rgb(100, 65, 0));
-        ScoreDisplay(Font.fontSmall,CurrentScore,DISPLAY_WIDTH/2 -70,410);
+        ScoreDisplay(Font.fontSmall,CurrentScore,DISPLAY_WIDTH/2 -70,409);
         al_flip_display();    
     }
         ScoreFileSave (highestScore);
@@ -356,7 +356,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
         }
 
         al_flip_display();  // Flip the display to show the updated graphics
-        al_rest(0.02); // Adjust the delay as needed to control the frame rate
+        al_rest(0.001); // Adjust the delay as needed to control the frame rate
 
     }
 }
