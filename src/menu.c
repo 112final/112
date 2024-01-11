@@ -170,25 +170,25 @@ int returnfirstmenu(ALLEGRO_EVENT_QUEUE *event_queue,ALLEGRO_DISPLAY *display,in
     return menu;      
 }
 
-void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int MaxScore,int stageNumber,int* highestScore,struct ResourceFont Font) 
+void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int* MaxScore,int stageNumber,int* highestScore,struct ResourceFont Font) 
 {
 
     bool buttonPressed = true;
     ALLEGRO_BITMAP* end_plane = NULL;
 
-    if(CurrentScore <= MaxScore/3)
+    if(CurrentScore <= MaxScore[stageNumber-1]/3)
     {
     end_plane = al_load_bitmap("zero star.png");
     }
-    if(CurrentScore > MaxScore/3 && CurrentScore <= 2*MaxScore/3)
+    if(CurrentScore > MaxScore[stageNumber-1]/3 && CurrentScore <= 2*MaxScore[stageNumber-1]/3)
     {
     end_plane = al_load_bitmap("one star.png");
     }
-    if(CurrentScore > 2*MaxScore/3 && CurrentScore <= MaxScore)
+    if(CurrentScore > 2*MaxScore[stageNumber-1]/3 && CurrentScore <= MaxScore[stageNumber-1])
     {
     end_plane = al_load_bitmap("two star.png");
     }
-    if(CurrentScore == MaxScore)
+    if(CurrentScore == MaxScore[stageNumber-1])
     {
     end_plane = al_load_bitmap("three star.png");
     }
@@ -228,11 +228,11 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
         
         al_draw_bitmap(end_plane,DISPLAY_WIDTH/2 -250, DISPLAY_HEIGHT/2 - 300, 0); 
         al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 - 75, 0); 
-        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -100, 400, DISPLAY_WIDTH/2 +100, 450, al_map_rgb(100, 65, 0));
-        ScoreDisplay(Font.fontSmall,CurrentScore,DISPLAY_WIDTH/2 -70,409);
+        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -120, 400, DISPLAY_WIDTH/2 +120, 450, al_map_rgb(100, 65, 0));
+        ScoreDisplay(Font.fontSmall,CurrentScore,MaxScore,stageNumber,DISPLAY_WIDTH/2 -100,409);
         al_flip_display();    
     }
-        ScoreFileSave (highestScore);
+        ScoreFileSave (highestScore,MaxScore);
         al_destroy_bitmap(end_plane);
 
         
@@ -294,9 +294,9 @@ void game_instruction(ALLEGRO_DISPLAY* display_1,ALLEGRO_EVENT_QUEUE *event_queu
     
 }
 
-void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, struct ResourcePic Pic, struct ResourceAudio Audio, int *highestScore, struct ResourceFont Font) {
+void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, struct ResourcePic Pic, struct ResourceAudio Audio, int *highestScore, struct ResourceFont Font,int *MaxScore) {
     bool buttonPressed = true;
-    char ScoreText[3][10];
+    char ScoreText[3][20];
     int i;
 
     while (buttonPressed) {
@@ -319,15 +319,15 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
                 if (mouseX >= 1000 && mouseX <= 1200 && mouseY >= 545 && mouseY <= 605) {
                     // Handle button press for clearing history
                     al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-                    ScoreFileClear();
+                    ScoreFileClear(MaxScore);
                     break;
                 }
 
-                if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
+                if (highestScore[1] ==  MaxScore[1] || highestScore[2] == MaxScore[2] || highestScore[3] == MaxScore[3]) {
                     if (mouseX >= 1064 && mouseX <= 1134 && mouseY >= 375 && mouseY <= 450) {
                         // Handle button press for level 4 if conditions are met
                         al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-                        player(display, event_queue, 4, Pic, Audio, Font, highestScore);
+                        player(display, event_queue, 4, Pic, Audio, Font, highestScore,MaxScore);
                         break;
                     }
                 }
@@ -343,7 +343,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
 
         al_draw_bitmap(Pic.contiune, 30, 20, 0);
 
-        if (highestScore[1] >= 40 && highestScore[2] >= 40 && highestScore[3] >= 40) {
+        if (highestScore[1] ==  MaxScore[1] || highestScore[2] == MaxScore[2] || highestScore[3] == MaxScore[3]) {
             al_draw_bitmap(Pic.level4, 1064, 375, 0);
         }
 
@@ -351,7 +351,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
         al_draw_text(Font.fontSmall, al_map_rgb(240, 240, 240), 1100, 555, ALLEGRO_ALIGN_CENTER, "Clear History");
 
         for (i = 0; i < 3; i++) {
-            snprintf(ScoreText[i], sizeof(ScoreText[i]), "%d", highestScore[i]);
+            snprintf(ScoreText[i], sizeof(ScoreText[i]), "%2d / %2d", highestScore[i],MaxScore[i]);
             al_draw_text(Font.fontBig, al_map_rgb(240, 240, 240), DISPLAY_WIDTH / 2 - 90, DISPLAY_HEIGHT / 2 - 223 + 200 * i, ALLEGRO_ALIGN_LEFT, ScoreText[i]);
         }
 

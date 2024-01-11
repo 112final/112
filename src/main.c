@@ -9,7 +9,8 @@ int main ()
     struct ResourcePic Pic;
     struct ResourceAudio Audio;
     struct ResourceFont Font;
-    int highestScore[3];
+    int highestScore[4];
+    int MaxScore[4];
     resourceInitPic(&Pic);
     resourceInitAudio(&Audio);
     resourceInitFont(&Font);
@@ -17,7 +18,7 @@ int main ()
     resourceLoadAudio(&Audio);
     resourceLoadFont(&Font);
 
-    ScoreFileLoad (highestScore);
+    ScoreFileLoad (highestScore,MaxScore);
 
     display = al_create_display(DISPLAY_WIDTH,DISPLAY_HEIGHT);
     event_queue = al_create_event_queue();
@@ -35,21 +36,21 @@ int main ()
         menu=menu_second(display,event_queue,Pic,Audio);
         if(menu==1)
         {
-            player(display,event_queue,1,Pic,Audio,Font,highestScore);
+            player(display,event_queue,1,Pic,Audio,Font,highestScore,MaxScore);
            
         }else if(menu==2)
         {
-            player(display,event_queue,2,Pic,Audio,Font,highestScore);
+            player(display,event_queue,2,Pic,Audio,Font,highestScore,MaxScore);
             
         }else if (menu==3)
         {
-            player(display,event_queue,3,Pic,Audio,Font,highestScore);
+            player(display,event_queue,3,Pic,Audio,Font,highestScore,MaxScore);
             
             
         }else if (menu==4)
         {   
-            ScoreFileLoad (highestScore);
-            historygame(display,event_queue,Pic,Audio,highestScore,Font);
+            ScoreFileLoad (highestScore,MaxScore);
+            historygame(display,event_queue,Pic,Audio,highestScore,Font,MaxScore);
             
         }else if(menu==5)
         {

@@ -1,6 +1,6 @@
 #include "header.h"
 
-void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageNumber,struct ResourcePic Pic,struct ResourceAudio Audio,struct ResourceFont Font,int* highestScore)
+void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageNumber,struct ResourcePic Pic,struct ResourceAudio Audio,struct ResourceFont Font,int* highestScore,int* MaxScore)
 {   
 
     int stage [40][40];
@@ -21,15 +21,14 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
     int arrowD_x = 1280;
     int arrowD_y = 50  ;
     int score = 0;
-    int MaxScore = 0;
     int CurrentScore = 0;
     int bombNUM[3];
 
     initial_array(barrier);
     stagefile(stage,barrier,stageNumber,bombNUM,&Pic);
 
-    MaxScore = StageChanged( stage );
-    int previousScore = MaxScore;
+    MaxScore[stageNumber-1] = StageChanged( stage );
+    int previousScore = MaxScore[stageNumber-1];
     int menu =0;
 
     displayLoadingScreen(Font.fontBig,Pic,1);
@@ -42,7 +41,7 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
         al_draw_bitmap(Pic.map, 290, 0, 0);
         al_draw_bitmap(Pic.BombType, 45, 50, 0);
 
-        al_draw_filled_rectangle(1035 , 50 , 1235 ,400,al_map_rgb(180, 135, 65));
+        al_draw_filled_rectangle(1025 , 50 , 1245 ,400,al_map_rgb(180, 135, 65));
         al_draw_text(Font.fontSmall, al_map_rgb(240, 240, 240), 1045, 115, ALLEGRO_ALIGN_LEFT, "Next:");
         LevelDisplay(Font.fontSmall,stageNumber);
         BombTypeDisplay(Font.fontSmall,bombNUM,Pic);
@@ -70,19 +69,19 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
         al_draw_bitmap(Pic.bitmap_left,arrowL_x,arrowL_y,0);
         al_draw_bitmap(Pic.bitmap_up,arrowU_x,arrowU_y,0);
         al_draw_bitmap(Pic.bitmap_down,arrowD_x,arrowD_y,0);
-        ScoreDisplay(Font.fontSmall,CurrentScore,1045,60);
+        ScoreDisplay(Font.fontSmall,CurrentScore,MaxScore,stageNumber,1040,60);
 
         menu = returnfirstmenu(event_queue,display,&positionx,&positiony,Pic,Audio);
         if(menu==1)
         {
             stagefile(stage,barrier,stageNumber,bombNUM,&Pic);
         }
-        DetonateBomb(event_queue, &bullet_x, &bullet_y, &bullet_dir, &transbomb,Pic.bitmapexplosion,stage,bombNUM);
+        DetonateBomb(event_queue, &bullet_x, &bullet_y, &bullet_dir, &transbomb,Pic.bitmapexplosion,stage,bombNUM,Audio);
         moveplayer(event_queue,&positionx, &positiony,&bullet_x,&bullet_y,&bullet_dir,&transbomb,bombNUM);
         
         if(bullet_x > 290 && bullet_x < 940 && bullet_y > 0 && bullet_y < 650 )
         {
-            detectbarrier(barrier,&bullet_x,&bullet_y,&bullet_dir,&transbomb,Pic.bitmapexplosion,stage,bombNUM);
+            detectbarrier(barrier,&bullet_x,&bullet_y,&bullet_dir,&transbomb,Pic.bitmapexplosion,stage,bombNUM,Audio);
         }
 
         renew_arrow(&positionx,&positiony,&arrowD_x,&arrowU_x,&arrowR_y,&arrowL_y);
@@ -91,7 +90,7 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
 
         if (score != previousScore)
         {
-            CurrentScore = MaxScore - score;    
+            CurrentScore = MaxScore[stageNumber-1] - score;    
             previousScore = score;
         }
 
