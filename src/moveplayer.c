@@ -1,6 +1,6 @@
 #include "header.h"
 
-void moveplayer(ALLEGRO_EVENT_QUEUE *event_queue,int * positionx,int * positiony,int *bullet_x ,int *bullet_y,int* bullet_dir,int*transbomb, int bombNUM[3])
+void moveplayer(ALLEGRO_EVENT_QUEUE *event_queue,int * positionx,int * positiony,int *bullet_x ,int *bullet_y,int* bullet_dir,int*transbomb, int bombNUM[3],struct ResourceAudio Audio)
 {
         ALLEGRO_EVENT ev;
         al_get_next_event(event_queue, &ev);
@@ -113,7 +113,9 @@ void moveplayer(ALLEGRO_EVENT_QUEUE *event_queue,int * positionx,int * positiony
                 
 
                 if (ev.type == ALLEGRO_EVENT_KEY_DOWN && ev.keyboard.keycode == ALLEGRO_KEY_TAB)
-                {
+                {   
+                    al_play_sample(Audio.flying, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+
                     if (*positionx == 290 && *positiony >= 0 && *positiony <= 650)
                     {
                         *bullet_x = *positionx + 50;

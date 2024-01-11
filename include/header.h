@@ -97,7 +97,7 @@ int menu_second(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic,struct
 void endgame(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,struct ResourcePic ,struct ResourceAudio,int,int*,int,int*,struct ResourceFont );
 int returnfirstmenu(ALLEGRO_EVENT_QUEUE *,ALLEGRO_DISPLAY *,int*,int*,struct ResourcePic,struct ResourceAudio);
 void player(ALLEGRO_DISPLAY*,ALLEGRO_EVENT_QUEUE *,int stageNumber,struct ResourcePic,struct ResourceAudio,struct ResourceFont,int*,int*);
-void moveplayer(ALLEGRO_EVENT_QUEUE *,int * ,int *,int *,int *,int*,int*,int[3]);
+void moveplayer(ALLEGRO_EVENT_QUEUE *,int * ,int *,int *,int *,int*,int*,int[3],struct ResourceAudio);
 void stagefile(int [40][40], struct barrier[144] ,int stageNumber ,int [3],struct ResourcePic* Pic);
 void stageprint(int [40][40],ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *,ALLEGRO_BITMAP *);
 void renew_bullet(int *,int*,int*);

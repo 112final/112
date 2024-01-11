@@ -77,7 +77,7 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
             stagefile(stage,barrier,stageNumber,bombNUM,&Pic);
         }
         DetonateBomb(event_queue, &bullet_x, &bullet_y, &bullet_dir, &transbomb,Pic.bitmapexplosion,stage,bombNUM,Audio);
-        moveplayer(event_queue,&positionx, &positiony,&bullet_x,&bullet_y,&bullet_dir,&transbomb,bombNUM);
+        moveplayer(event_queue,&positionx, &positiony,&bullet_x,&bullet_y,&bullet_dir,&transbomb,bombNUM,Audio);
         
         if(bullet_x > 290 && bullet_x < 940 && bullet_y > 0 && bullet_y < 650 )
         {

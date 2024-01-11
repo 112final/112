@@ -116,7 +116,7 @@ void resourceLoadAudio(struct ResourceAudio* Audio)
     Audio->start = al_load_sample("./Start.mp3"); 
     Audio->button = al_load_sample("./bonk.mp3"); 
     Audio->boom = al_load_sample("./boom.mp3");
-    Audio->flying = al_load_sample("./flying.mp3"); 
+    Audio->flying = al_load_sample("./flying.wav"); 
     Audio->background = al_load_sample("./bgm.mp3");
 }
 
