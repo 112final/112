@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "YourProgram::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-YourProgram-Debug-c824c5cd0ca5fa291155.json",
+					"jsonFile" : "target-YourProgram-Debug-8d16dc8f00481e567c92.json",
 					"name" : "YourProgram",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/My Program/C/112-1/gameproject_test_1225_2/build",
-		"source" : "C:/My Program/C/112-1/gameproject_test_1225_2"
+		"build" : "C:/Users/Chenyujay/Downloads/112-main/build",
+		"source" : "C:/Users/Chenyujay/Downloads/112-main"
 	},
 	"version" : 
 	{
