@@ -67,6 +67,8 @@ struct ResourcePic
     ALLEGRO_BITMAP *question ;
     ALLEGRO_BITMAP *GameInstructions;
     ALLEGRO_BITMAP *BombType;
+    ALLEGRO_BITMAP *award;
+    ALLEGRO_BITMAP *box;
 
 
 };
@@ -118,8 +120,9 @@ void ScoreFileLoad (int* ,int* );
 void ScoreFileSave (int* ,int* );
 void ScoreFileClear (int* );
 
-
-
+//特殊關卡設置
+void door(int ,int*,int*,int*);
+void award(struct ResourcePic);
 
 //炸彈種類
 void cross(int *,int *,ALLEGRO_BITMAP* ,int*,int [40][40] );

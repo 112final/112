@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/My Program/C/112-1/gameproject_test_1225_2/src/award.c" "CMakeFiles/YourProgram.dir/src/award.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/award.c.obj.d"
   "C:/My Program/C/112-1/gameproject_test_1225_2/src/bomb.c" "CMakeFiles/YourProgram.dir/src/bomb.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/bomb.c.obj.d"
   "C:/My Program/C/112-1/gameproject_test_1225_2/src/detect.c" "CMakeFiles/YourProgram.dir/src/detect.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/detect.c.obj.d"
+  "C:/My Program/C/112-1/gameproject_test_1225_2/src/door.c" "CMakeFiles/YourProgram.dir/src/door.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/door.c.obj.d"
   "C:/My Program/C/112-1/gameproject_test_1225_2/src/file.c" "CMakeFiles/YourProgram.dir/src/file.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/file.c.obj.d"
   "C:/My Program/C/112-1/gameproject_test_1225_2/src/fresharray.c" "CMakeFiles/YourProgram.dir/src/fresharray.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/fresharray.c.obj.d"
   "C:/My Program/C/112-1/gameproject_test_1225_2/src/game.c" "CMakeFiles/YourProgram.dir/src/game.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/game.c.obj.d"

@@ -68,11 +68,26 @@ include CMakeFiles/YourProgram.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/YourProgram.dir/flags.make
 
+CMakeFiles/YourProgram.dir/src/award.c.obj: CMakeFiles/YourProgram.dir/flags.make
+CMakeFiles/YourProgram.dir/src/award.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
+CMakeFiles/YourProgram.dir/src/award.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/award.c
+CMakeFiles/YourProgram.dir/src/award.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/YourProgram.dir/src/award.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/award.c.obj -MF CMakeFiles\YourProgram.dir\src\award.c.obj.d -o CMakeFiles\YourProgram.dir\src\award.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\award.c"
+
+CMakeFiles/YourProgram.dir/src/award.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/YourProgram.dir/src/award.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\My Program\C\112-1\gameproject_test_1225_2\src\award.c" > CMakeFiles\YourProgram.dir\src\award.c.i
+
+CMakeFiles/YourProgram.dir/src/award.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/YourProgram.dir/src/award.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\My Program\C\112-1\gameproject_test_1225_2\src\award.c" -o CMakeFiles\YourProgram.dir\src\award.c.s
+
 CMakeFiles/YourProgram.dir/src/bomb.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/bomb.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/bomb.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/bomb.c
 CMakeFiles/YourProgram.dir/src/bomb.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/YourProgram.dir/src/bomb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/YourProgram.dir/src/bomb.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/bomb.c.obj -MF CMakeFiles\YourProgram.dir\src\bomb.c.obj.d -o CMakeFiles\YourProgram.dir\src\bomb.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\bomb.c"
 
 CMakeFiles/YourProgram.dir/src/bomb.c.i: cmake_force
@@ -87,7 +102,7 @@ CMakeFiles/YourProgram.dir/src/detect.c.obj: CMakeFiles/YourProgram.dir/flags.ma
 CMakeFiles/YourProgram.dir/src/detect.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/detect.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/detect.c
 CMakeFiles/YourProgram.dir/src/detect.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/YourProgram.dir/src/detect.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/YourProgram.dir/src/detect.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/detect.c.obj -MF CMakeFiles\YourProgram.dir\src\detect.c.obj.d -o CMakeFiles\YourProgram.dir\src\detect.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\detect.c"
 
 CMakeFiles/YourProgram.dir/src/detect.c.i: cmake_force
@@ -98,11 +113,26 @@ CMakeFiles/YourProgram.dir/src/detect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/YourProgram.dir/src/detect.c.s"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\My Program\C\112-1\gameproject_test_1225_2\src\detect.c" -o CMakeFiles\YourProgram.dir\src\detect.c.s
 
+CMakeFiles/YourProgram.dir/src/door.c.obj: CMakeFiles/YourProgram.dir/flags.make
+CMakeFiles/YourProgram.dir/src/door.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
+CMakeFiles/YourProgram.dir/src/door.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/door.c
+CMakeFiles/YourProgram.dir/src/door.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/YourProgram.dir/src/door.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/door.c.obj -MF CMakeFiles\YourProgram.dir\src\door.c.obj.d -o CMakeFiles\YourProgram.dir\src\door.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\door.c"
+
+CMakeFiles/YourProgram.dir/src/door.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/YourProgram.dir/src/door.c.i"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\My Program\C\112-1\gameproject_test_1225_2\src\door.c" > CMakeFiles\YourProgram.dir\src\door.c.i
+
+CMakeFiles/YourProgram.dir/src/door.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/YourProgram.dir/src/door.c.s"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\My Program\C\112-1\gameproject_test_1225_2\src\door.c" -o CMakeFiles\YourProgram.dir\src\door.c.s
+
 CMakeFiles/YourProgram.dir/src/file.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/file.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/file.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/file.c
 CMakeFiles/YourProgram.dir/src/file.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/YourProgram.dir/src/file.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/YourProgram.dir/src/file.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/file.c.obj -MF CMakeFiles\YourProgram.dir\src\file.c.obj.d -o CMakeFiles\YourProgram.dir\src\file.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\file.c"
 
 CMakeFiles/YourProgram.dir/src/file.c.i: cmake_force
@@ -117,7 +147,7 @@ CMakeFiles/YourProgram.dir/src/fresharray.c.obj: CMakeFiles/YourProgram.dir/flag
 CMakeFiles/YourProgram.dir/src/fresharray.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/fresharray.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/fresharray.c
 CMakeFiles/YourProgram.dir/src/fresharray.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/YourProgram.dir/src/fresharray.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/YourProgram.dir/src/fresharray.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/fresharray.c.obj -MF CMakeFiles\YourProgram.dir\src\fresharray.c.obj.d -o CMakeFiles\YourProgram.dir\src\fresharray.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\fresharray.c"
 
 CMakeFiles/YourProgram.dir/src/fresharray.c.i: cmake_force
@@ -132,7 +162,7 @@ CMakeFiles/YourProgram.dir/src/game.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/game.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/game.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/game.c
 CMakeFiles/YourProgram.dir/src/game.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/YourProgram.dir/src/game.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/YourProgram.dir/src/game.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/game.c.obj -MF CMakeFiles\YourProgram.dir\src\game.c.obj.d -o CMakeFiles\YourProgram.dir\src\game.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\game.c"
 
 CMakeFiles/YourProgram.dir/src/game.c.i: cmake_force
@@ -147,7 +177,7 @@ CMakeFiles/YourProgram.dir/src/initial_src.c.obj: CMakeFiles/YourProgram.dir/fla
 CMakeFiles/YourProgram.dir/src/initial_src.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/initial_src.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/initial_src.c
 CMakeFiles/YourProgram.dir/src/initial_src.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/YourProgram.dir/src/initial_src.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/YourProgram.dir/src/initial_src.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/initial_src.c.obj -MF CMakeFiles\YourProgram.dir\src\initial_src.c.obj.d -o CMakeFiles\YourProgram.dir\src\initial_src.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\initial_src.c"
 
 CMakeFiles/YourProgram.dir/src/initial_src.c.i: cmake_force
@@ -162,7 +192,7 @@ CMakeFiles/YourProgram.dir/src/main.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/main.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/main.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/main.c
 CMakeFiles/YourProgram.dir/src/main.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/YourProgram.dir/src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/YourProgram.dir/src/main.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/main.c.obj -MF CMakeFiles\YourProgram.dir\src\main.c.obj.d -o CMakeFiles\YourProgram.dir\src\main.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\main.c"
 
 CMakeFiles/YourProgram.dir/src/main.c.i: cmake_force
@@ -177,7 +207,7 @@ CMakeFiles/YourProgram.dir/src/menu.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/menu.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/menu.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/menu.c
 CMakeFiles/YourProgram.dir/src/menu.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/YourProgram.dir/src/menu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/YourProgram.dir/src/menu.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/menu.c.obj -MF CMakeFiles\YourProgram.dir\src\menu.c.obj.d -o CMakeFiles\YourProgram.dir\src\menu.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\menu.c"
 
 CMakeFiles/YourProgram.dir/src/menu.c.i: cmake_force
@@ -192,7 +222,7 @@ CMakeFiles/YourProgram.dir/src/moveplayer.c.obj: CMakeFiles/YourProgram.dir/flag
 CMakeFiles/YourProgram.dir/src/moveplayer.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/moveplayer.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/moveplayer.c
 CMakeFiles/YourProgram.dir/src/moveplayer.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/YourProgram.dir/src/moveplayer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/YourProgram.dir/src/moveplayer.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/moveplayer.c.obj -MF CMakeFiles\YourProgram.dir\src\moveplayer.c.obj.d -o CMakeFiles\YourProgram.dir\src\moveplayer.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\moveplayer.c"
 
 CMakeFiles/YourProgram.dir/src/moveplayer.c.i: cmake_force
@@ -207,7 +237,7 @@ CMakeFiles/YourProgram.dir/src/renew.c.obj: CMakeFiles/YourProgram.dir/flags.mak
 CMakeFiles/YourProgram.dir/src/renew.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/renew.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/renew.c
 CMakeFiles/YourProgram.dir/src/renew.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/YourProgram.dir/src/renew.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/YourProgram.dir/src/renew.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/renew.c.obj -MF CMakeFiles\YourProgram.dir\src\renew.c.obj.d -o CMakeFiles\YourProgram.dir\src\renew.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\renew.c"
 
 CMakeFiles/YourProgram.dir/src/renew.c.i: cmake_force
@@ -222,7 +252,7 @@ CMakeFiles/YourProgram.dir/src/resource.c.obj: CMakeFiles/YourProgram.dir/flags.
 CMakeFiles/YourProgram.dir/src/resource.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/resource.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/resource.c
 CMakeFiles/YourProgram.dir/src/resource.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/YourProgram.dir/src/resource.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/YourProgram.dir/src/resource.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/resource.c.obj -MF CMakeFiles\YourProgram.dir\src\resource.c.obj.d -o CMakeFiles\YourProgram.dir\src\resource.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\resource.c"
 
 CMakeFiles/YourProgram.dir/src/resource.c.i: cmake_force
@@ -237,7 +267,7 @@ CMakeFiles/YourProgram.dir/src/score.c.obj: CMakeFiles/YourProgram.dir/flags.mak
 CMakeFiles/YourProgram.dir/src/score.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/score.c.obj: C:/My\ Program/C/112-1/gameproject_test_1225_2/src/score.c
 CMakeFiles/YourProgram.dir/src/score.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/YourProgram.dir/src/score.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/YourProgram.dir/src/score.c.obj"
 	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/score.c.obj -MF CMakeFiles\YourProgram.dir\src\score.c.obj.d -o CMakeFiles\YourProgram.dir\src\score.c.obj -c "C:\My Program\C\112-1\gameproject_test_1225_2\src\score.c"
 
 CMakeFiles/YourProgram.dir/src/score.c.i: cmake_force
@@ -250,8 +280,10 @@ CMakeFiles/YourProgram.dir/src/score.c.s: cmake_force
 
 # Object files for target YourProgram
 YourProgram_OBJECTS = \
+"CMakeFiles/YourProgram.dir/src/award.c.obj" \
 "CMakeFiles/YourProgram.dir/src/bomb.c.obj" \
 "CMakeFiles/YourProgram.dir/src/detect.c.obj" \
+"CMakeFiles/YourProgram.dir/src/door.c.obj" \
 "CMakeFiles/YourProgram.dir/src/file.c.obj" \
 "CMakeFiles/YourProgram.dir/src/fresharray.c.obj" \
 "CMakeFiles/YourProgram.dir/src/game.c.obj" \
@@ -266,8 +298,10 @@ YourProgram_OBJECTS = \
 # External object files for target YourProgram
 YourProgram_EXTERNAL_OBJECTS =
 
+C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/award.c.obj
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/bomb.c.obj
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/detect.c.obj
+C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/door.c.obj
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/file.c.obj
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/fresharray.c.obj
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/src/game.c.obj
@@ -290,7 +324,7 @@ C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: C:/AllegroLib_5.
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/linkLibs.rsp
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/objects1.rsp
 C:/My\ Program/C/112-1/gameproject_test_1225_2/YourProgram.exe: CMakeFiles/YourProgram.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable \"C:\My Program\C\112-1\gameproject_test_1225_2\YourProgram.exe\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\My Program\C\112-1\gameproject_test_1225_2\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable \"C:\My Program\C\112-1\gameproject_test_1225_2\YourProgram.exe\""
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\YourProgram.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

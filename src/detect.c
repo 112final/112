@@ -179,12 +179,13 @@ void DetonateBomb(ALLEGRO_EVENT_QUEUE *event_queue, int *bullet_x, int *bullet_y
 void detectexplosion(struct barrier*coop,int stage[40][40],int i )
 {
     int a;
-        for (a=0;a<i;a++)       
+        for (a=0;a<i;a++)
         {
-            if(stage[coop[a].initial_y][coop[a].initial_x]!=4)
+            if(stage[coop[a].initial_y][coop[a].initial_x]!=4 && stage[coop[a].initial_y][coop[a].initial_x]!=9)
             {
                 stage[coop[a].initial_y][coop[a].initial_x]=0;
             }
+
         }
-    
+
 }

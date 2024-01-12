@@ -323,7 +323,7 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
                     break;
                 }
 
-                if (highestScore[1] ==  MaxScore[1] || highestScore[2] == MaxScore[2] || highestScore[3] == MaxScore[3]) {
+                if (highestScore[0] ==  MaxScore[0] && highestScore[1] == MaxScore[1] && highestScore[2] == MaxScore[2]) {
                     if (mouseX >= 1064 && mouseX <= 1134 && mouseY >= 375 && mouseY <= 450) {
                         // Handle button press for level 4 if conditions are met
                         al_play_sample(Audio.start, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
@@ -343,8 +343,12 @@ void historygame(ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *event_queue, str
 
         al_draw_bitmap(Pic.contiune, 30, 20, 0);
 
-        if (highestScore[1] ==  MaxScore[1] || highestScore[2] == MaxScore[2] || highestScore[3] == MaxScore[3]) {
-            al_draw_bitmap(Pic.level4, 1064, 375, 0);
+        if (highestScore[0] ==  MaxScore[0] && highestScore[1] == MaxScore[1] && highestScore[2] == MaxScore[2]) {
+            al_draw_bitmap(Pic.level4, 1014, 375, 0);
+        }
+        if (highestScore[3] ==  MaxScore[3]) {
+            al_draw_bitmap(Pic.level4, 1114, 375, 0);
+            award(Pic);
         }
 
         al_draw_filled_rectangle(1000, 545, 1200, 605, al_map_rgb(100, 65, 0));

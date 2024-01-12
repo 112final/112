@@ -128,6 +128,30 @@ YourProgram/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/build
 .PHONY : YourProgram/fast
 
+src/award.obj: src/award.c.obj
+.PHONY : src/award.obj
+
+# target to build an object file
+src/award.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/award.c.obj
+.PHONY : src/award.c.obj
+
+src/award.i: src/award.c.i
+.PHONY : src/award.i
+
+# target to preprocess a source file
+src/award.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/award.c.i
+.PHONY : src/award.c.i
+
+src/award.s: src/award.c.s
+.PHONY : src/award.s
+
+# target to generate assembly for a file
+src/award.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/award.c.s
+.PHONY : src/award.c.s
+
 src/bomb.obj: src/bomb.c.obj
 .PHONY : src/bomb.obj
 
@@ -175,6 +199,30 @@ src/detect.s: src/detect.c.s
 src/detect.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/detect.c.s
 .PHONY : src/detect.c.s
+
+src/door.obj: src/door.c.obj
+.PHONY : src/door.obj
+
+# target to build an object file
+src/door.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/door.c.obj
+.PHONY : src/door.c.obj
+
+src/door.i: src/door.c.i
+.PHONY : src/door.i
+
+# target to preprocess a source file
+src/door.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/door.c.i
+.PHONY : src/door.c.i
+
+src/door.s: src/door.c.s
+.PHONY : src/door.s
+
+# target to generate assembly for a file
+src/door.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/door.c.s
+.PHONY : src/door.c.s
 
 src/file.obj: src/file.c.obj
 .PHONY : src/file.obj
@@ -425,12 +473,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... YourProgram
+	@echo ... src/award.obj
+	@echo ... src/award.i
+	@echo ... src/award.s
 	@echo ... src/bomb.obj
 	@echo ... src/bomb.i
 	@echo ... src/bomb.s
 	@echo ... src/detect.obj
 	@echo ... src/detect.i
 	@echo ... src/detect.s
+	@echo ... src/door.obj
+	@echo ... src/door.i
+	@echo ... src/door.s
 	@echo ... src/file.obj
 	@echo ... src/file.i
 	@echo ... src/file.s

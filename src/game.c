@@ -100,6 +100,9 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
             break;
         }
 
+        //第四關小改造
+        door(stageNumber,&bullet_x,&bullet_y,&bullet_dir );
+
         fresharray(stage,barrier);
         al_rest(0.01);
         

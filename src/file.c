@@ -74,6 +74,10 @@ void stageprint(int stage[40][40],ALLEGRO_BITMAP *bitmapstone,ALLEGRO_BITMAP *re
             {
                 al_draw_bitmap(grass,x+50*i ,y+50*j,0);
             }
+            if(stage[j][i]==9)
+            {
+                al_draw_filled_rectangle(x+50*i+10,y+50*j+10,x+50*i+40,y+50*j+40, al_map_rgb(0, 0, 0));
+            }
 
         }
 
@@ -83,7 +87,7 @@ void ScoreFileLoad (int* highestScore,int* MaxScore)
 {
     int i;
     FILE *file = fopen("./history.txt", "r");
-        for (i = 0; i < 3; i++) 
+        for (i = 0; i < 4; i++) 
         {
             fscanf(file, "%d %d\n", &highestScore[i],&MaxScore[i]);
         }
@@ -96,7 +100,7 @@ void ScoreFileSave (int* highestScore,int* MaxScore)
 {   
     int i;
     FILE *file = fopen("./history.txt", "w");
-        for (i = 0; i < 3; i++) 
+        for (i = 0; i < 4; i++) 
         {
             fprintf(file, "%d %d\n", highestScore[i],MaxScore[i]);
         }
@@ -110,7 +114,7 @@ void ScoreFileClear (int* MaxScore)
 {   
     int i;
     FILE *file = fopen("./history.txt", "w");
-        for (i = 0; i < 3; i++) 
+        for (i = 0; i < 4; i++) 
         {
             fprintf(file, "%d %d\n", 0,MaxScore[i]);
         }
