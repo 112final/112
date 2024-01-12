@@ -170,7 +170,7 @@ int returnfirstmenu(ALLEGRO_EVENT_QUEUE *event_queue,ALLEGRO_DISPLAY *display,in
     return menu;      
 }
 
-void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int* MaxScore,int stageNumber,int* highestScore,struct ResourceFont Font) 
+int endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct ResourcePic Pic,struct ResourceAudio Audio,int CurrentScore,int* MaxScore,int stageNumber,int* highestScore,struct ResourceFont Font) 
 {
 
     bool buttonPressed = true;
@@ -199,7 +199,7 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
     }
 
  
- //   int menu=0;
+    int menu=0;
     while (buttonPressed) {
 
         ALLEGRO_EVENT ev;//用以儲存al_get_next_event所取出的事件
@@ -216,9 +216,15 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
                 if (mouseX >= DISPLAY_WIDTH/2 - 100 && mouseX <= DISPLAY_WIDTH/2 +100 && mouseY >=DISPLAY_HEIGHT/2 - 75 && mouseY <= DISPLAY_HEIGHT/2) 
                 {
                     al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+                    menu=1;
+                    break;       
+                }
 
+                if (mouseX >= DISPLAY_WIDTH/2 - 100 && mouseX <= DISPLAY_WIDTH/2 +100 && mouseY >= DISPLAY_HEIGHT/2 +75 && mouseY <= DISPLAY_HEIGHT/2 + 150) 
+                {
+                    al_play_sample(Audio.button, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE,NULL);
+                    menu=3;
                     break;
-                    
                 }
 
             } 
@@ -227,13 +233,16 @@ void endgame(ALLEGRO_DISPLAY*display,ALLEGRO_EVENT_QUEUE *event_queue,struct Res
         al_draw_bitmap(Pic.back,0, 0, 0);
         
         al_draw_bitmap(end_plane,DISPLAY_WIDTH/2 -250, DISPLAY_HEIGHT/2 - 300, 0); 
-        al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 - 75, 0); 
-        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -120, 400, DISPLAY_WIDTH/2 +120, 450, al_map_rgb(100, 65, 0));
-        ScoreDisplay(Font.fontSmall,CurrentScore,MaxScore,stageNumber,DISPLAY_WIDTH/2 -100,409);
+        al_draw_bitmap(Pic.contiune,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 + 75, 0); 
+        al_draw_bitmap(Pic.restartbutton,DISPLAY_WIDTH/2 - 100, DISPLAY_HEIGHT/2 - 75, 0);
+        al_draw_filled_rectangle(DISPLAY_WIDTH/2 -120, DISPLAY_HEIGHT/2 + 175, DISPLAY_WIDTH/2 +120, DISPLAY_HEIGHT/2 + 235, al_map_rgb(100, 65, 0));
+        ScoreDisplay(Font.fontSmall,CurrentScore,MaxScore,stageNumber,DISPLAY_WIDTH/2 -100,DISPLAY_HEIGHT/2 + 185);
         al_flip_display();    
     }
         ScoreFileSave (highestScore,MaxScore);
         al_destroy_bitmap(end_plane);
+        return menu;
+        printf("yes");
 
         
 

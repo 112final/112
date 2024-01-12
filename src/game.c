@@ -96,8 +96,8 @@ void player(ALLEGRO_DISPLAY *display,ALLEGRO_EVENT_QUEUE *event_queue,int stageN
 
         if(bombNUM[0] == 0 && bombNUM[1] == 0 && bombNUM[2] == 0)
         {
-            endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore,Font);
-            break;
+            menu = endgame(display,event_queue,Pic,Audio,CurrentScore,MaxScore,stageNumber,highestScore,Font);
+            stagefile(stage,barrier,stageNumber,bombNUM,&Pic);
         }
 
         //第四關小改造
